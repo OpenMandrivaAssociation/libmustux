@@ -5,7 +5,7 @@
 
 %define major 	0
 %define libname %mklibname %fname %major
-%define libnamedevel %mklibname %fname
+%define libnamedevel %mklibname -d %fname
 
 Summary: 	The libraries need by protux
 Name: 		%{name}
