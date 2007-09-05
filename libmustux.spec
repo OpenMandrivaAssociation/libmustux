@@ -1,16 +1,17 @@
 %define fname 	mustux
 %define name 	lib%{fname}
-%define version 0.20.1
-%define release %mkrel 3
+%define version 0.20.2
+%define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %fname %major
+%define libnamedevel %mklibname %fname
 
 Summary: 	The libraries need by protux
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source0: 	%{name}-%{version}.tar.bz2
+Source0: 	%{name}-%{version}.tar.gz
 Patch0:     libmustux-0.20.1-cpp.patch
 License: 	GPL
 Group: 		System/Libraries
@@ -42,13 +43,13 @@ of keyboard+mouse combination (with no clicks) to vastly speed up
 the process of audio production.
 This concept we call "Jog-Mouse-Board" or JMB, for short.
 
-%package -n %libname-devel
+%package -n %libnamedevel
 Summary: The development files from %name
 Group: Development/Other
 Provides: %name-devel = %version-%release
 Requires: %libname = %version-%release
 
-%description -n %libname-devel
+%description -n %libnamedevel
 The development files need to build applications which used %name
 
 %prep
@@ -57,6 +58,7 @@ The development files need to build applications which used %name
 
 %build
 aclocal
+libtoolize --force
 automake -a
 autoconf
 %configure \
@@ -79,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %_libdir/*.so.*
 
-%files -n %libname-devel
+%files -n %libnamedevel
 %defattr(-,root,root)
 %_bindir/*
 %_includedir/*.h
@@ -89,24 +91,3 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/*.a
 %_libdir/*.so
 %_datadir/aclocal/mustux.m4
-
-
-* Wed Jun 30 2004 Thierry Vignaud <tvignaud@mandrakesoft.com> 0.20.1-2mdk
-- reenable libtoolize
-- rebuild for new g++
-
-* Thu Apr 1 2004 Austin Acton <austin@mandrake.org> 0.20.1-1mdk
-- 0.20.1
-
-* Mon Oct 13 2003 Austin Acton <aacton@yorku.ca> 0.18.0-1mdk
-- 0.18.0
-- don't use configure macro
-
-* Sat May 03 2003 Olivier Thauvin <thauvin@aerov.jussieu.fr> 0.16.0-3mdk
-- fix build
-
-* Sat May 03 2003 Olivier Thauvin <thauvin@aerov.jussieu.fr> 0.16.0-2mdk
-- fix missing link in %%_libdir
-
-* Sat May 03 2003 Olivier Thauvin <thauvin@aerov.jussieu.fr> 0.16.0-1mdk
-- initial mdk package 
