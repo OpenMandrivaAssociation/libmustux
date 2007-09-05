@@ -19,6 +19,7 @@ Url: 		http://www.nongnu.org/protux/
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires: 	qt3-devel
 BuildRequires: 	libalsa-devel
+BuildRequires:  libogg-devel
 
 %description
 The libraries need by protux
