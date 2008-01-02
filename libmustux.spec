@@ -16,6 +16,7 @@ Patch0:     libmustux-0.20.1-cpp.patch
 License: 	GPL
 Group: 		System/Libraries
 Url: 		http://www.nongnu.org/protux/
+BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires: 	qt3-devel
 BuildRequires: 	libalsa-devel
 BuildRequires:  libogg-devel
