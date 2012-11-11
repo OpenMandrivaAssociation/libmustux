@@ -1,0 +1,13 @@
+Index: MustuxAudioDeviceMapper.hh
+===================================================================
+--- MustuxAudioDeviceMapper.hh
++++ MustuxAudioDeviceMapper.hh	2006-07-15 21:58:21.489128141 +0200
+@@ -160,7 +160,7 @@
+ 	int find_bus_out(int rate, int bitDepth, int channels);
+ 	int find_bus_in(int rate, int bitDepth, int channels);
+ 
+-	snd_pcm_format_t MustuxAudioDeviceMapper::get_format(int bitDepht);
++	snd_pcm_format_t get_format(int bitDepht);
+ 	};
+ 
+ #include "MustuxAudioBus.hh"
