@@ -17,6 +17,11 @@ License: 	GPL
 Group: 		System/Libraries
 Url: 		https://www.nongnu.org/protux/
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: 	qt3-devel
 BuildRequires: 	libalsa-devel
 BuildRequires:  libogg-devel
