@@ -1,7 +1,7 @@
 %define fname 	mustux
 %define name 	lib%{fname}
 %define version 0.20.2
-%define release %mkrel 4
+%define release 5
 
 %define major 	0
 %define libname %mklibname %fname %major
